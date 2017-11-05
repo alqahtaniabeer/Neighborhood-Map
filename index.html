@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Favorite Place</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <button class="hamburger">&#9776;</button>
+        <button class="cross">&#735;</button>
+            <aside class="options-box" id="list" data-bind="css: { closed: !open() }">
+                <h1>Top Best Places in NYC to Visit:</h1>
+                <hr>
+                <div>
+                    <span class="text">Filter Locations</span>
+                    <input type="text" placeholder="Filter" data-bind="textInput: query">
+                </div>
+                <hr>
+                <div>
+                    <h2 class="text">Here are information about this places!!!</h2>
+                    <hr>
+                </div>
+                <ul data-bind="foreach:filteredPlaces">
+                    <li data-bind="text:title, click:$root.clickMarker"></li>
+                </ul>
+            </aside>
+        <main id="map"></main>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCGfBvhwm8FLKm2HX_wGs6dOly6O4MacME&callback=initMap" onerror="error()">
+    </script>
+</body>
+</html>
